@@ -10,18 +10,18 @@ def home():
     files = os.listdir(os.path.join(UPLOAD_DIR, 'files')) if os.path.isdir(os.path.join(UPLOAD_DIR, 'files')) else []
     return render_template("index.html", files=files)
 
-@app.route("/files/<path:fname>")
-def download(fname):
-    return send_from_directory(os.path.join(UPLOAD_DIR,'files'), fname, as_attachment=True)
+#@app.route("/files/<path:fname>")
+#def download(fname):
+#    return send_from_directory(os.path.join(UPLOAD_DIR,'files'), fname, as_attachment=True)
 
-@app.route("/upload", methods=["POST"])
-def upload():
-    f = request.files.get("file")
-    if f:
-        dest = os.path.join(UPLOAD_DIR, 'files')
-        os.makedirs(dest, exist_ok=True)
-        f.save(os.path.join(dest, f.filename))
-    return redirect(url_for("home"))
+#@app.route("/upload", methods=["POST"])
+#def upload():
+#    f = request.files.get("file")
+#    if f:
+#        dest = os.path.join(UPLOAD_DIR, 'files')
+#        os.makedirs(dest, exist_ok=True)
+#        f.save(os.path.join(dest, f.filename))
+#    return redirect(url_for("home"))
 
 @app.route("/pgp-key")
 def pgp_key():
