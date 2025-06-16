@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/milligram@1.4.1/dist/milligram.min.css">
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/custom.css') }}">
+
+</head>
+<body>
+<title>Matthew Vuk</title>
+
+<div class="container home">
+<div class="row">
+<div class="column">
+
+<h1>Matthew Vuk</h1>
+
+<p>Send me an encrypted email:</p>
+
+<ul>
+<li><a href="mailto:email@matthewvuk.com">Send Email</a></li>
+<li><a href="{{ url_for('pgp_key') }}">Download public_key.asc</a></li>
+</ul>
+
+<table class="encryption-table">
+  <tbody>
+    <tr>
+      <td>pub</td>
+      <td>rsa4096 2025-06-16 [SC]<br>85A1476B1BCF8139AE4D3A61BCD3674D787A9FAB
+      </td>
+    </tr>
+    <tr>
+      <td>uid</td>
+      <td>email@matthewvuk.com</td>
+    </tr>
+    <tr>
+      <td>sub</td>
+      <td>rsa4096 2025-06-16 [E]</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+</div>
+</div>
+
+</body>
+</html>
